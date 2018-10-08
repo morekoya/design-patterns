@@ -63,6 +63,6 @@ chain_of_responsibility = HitchHikersGuideQuestionHandler.new(
   HarryPotterQuestionHandler.new
 )
 
-chain_of_responsibility.process_request("Who is Harry Potter best friend?")
+chain_of_responsibility.process_request("Who is Harry Potter's best friend?")
 chain_of_responsibility.process_request("What is the Avengers about?")
 chain_of_responsibility.process_request("Why are there 7 Hitch Hiker's Guide?")
