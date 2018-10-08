@@ -44,7 +44,7 @@ this can easily be accomplished by running
 a. add_sub_task(AddDryIngredientsTask.new)
 b. add_sub_task(MakeBatterTask.new)
 
-One can see that they both have intialize methods to store the name of the task an get_time_required to store
+    One can see that they both have intialize methods to store the name of the task an get_time_required to store
 the time left for the task to be completed.
 
 8. Decorator method design pattern: the following steps are required for getting the price of different types of coffee
@@ -57,29 +57,24 @@ b. call facade. method_1 or facede. method_2
 
 10. Flyweight design pattern: these are the steps required to run FlyweightFactory
 a. call the flyweightFActory Class as in flyweight_factory = FlyweightFactory.new
-b. call flyget_flyweight("flyweight1") to see what get returned
+b. call flyweight_factory.yget_flyweight("flyweight1") to see what get returned
 c.  flyweight1.operation(10) to see the return
 
-
-
-11. Interpreter design pattern: this are the steps required for the finding of an expression in the group of letters entered.
+11. Interpreter design pattern: These are the steps required for the finding of an expression in the group of letters entered.
 a. Context.new("AAABBBCCCDDD")
 b. The steps required for getting TernimalExpressiong and NonTerminalExpression from AbstractExpression in   
 
-12. Chain of responsibility design pattern: The following steps are required in answering questions
+12. Chain of responsibility design pattern: fothid we have a QusetionhHandler. The following steps are required in answering questions
 a. Call the the chain _of_responsibility.process request with the asked question inside
-This can be answered by running chain_of_responsibility.process_request("Who is Harry Potter's best friend?") to give Answering a Harry Potter related question
+This can be answered by running chain_of_responsibility.process_request("Who is Harry Potter's best friend?") to give `Answering a Harry Potter related question`
 
 13. Iterator design pattern: This is th rfollowing steps required to call and create new Portfolio elements
 a. create a new portfolio: Portfolio.new
 b. create a new Portfolio element: my_portfolio.add_account(Account.new('Stocks', 100))
 
-
-
-
-14. Mediator design pattern: theses are the following steps required to find a word
-a.submit a array of words
-b. submit a Mediator with the value of the searched text_field
+14. Mediator design pattern: These are the following steps required to find a word
+a. Submit a array of words
+b. Submit a Mediator with the value of the searched text_field
 This can easily be solved by running 
 list = List.new(["apple", "avocado", "banana", "kiwi", "mango", "watermelon"])
 text_field = TextFieldWithObserver.new
@@ -101,40 +96,66 @@ This can be acheived by running
     originator.state = "name:bar"
     originator.restore_from_memento(caretaker.memento)
 
-16. Observer pattern: We ahave an 
+16. Observer design pattern: The are the steps required to edit an observer
+a. Create an oserver
+b. Change the observer
+c. Notify about the change in observers 
+This can be achieved by running the following 
+observer_a = Observer.new
+observer_b = Observer.new
+subject = Subject.new
+subject.name = "Anakin Skywalker"
+subject.add_observer(observer_a)
+subject.add_observer(observer_b)
+subject.name = "Obi Wan Kenobi"
+subject.notify_observers
 
-The Observer pattern allows you to notify parts of your program that some other part of your program has changed. It does this while allowing you to vary the objects you wish to keep informed ( observers ) from the object being observed ( the subject ) independently. It enables a highly decoupled but well informed system. Critically, you are able to add observers to a subject without having to modify either the observer or the subject. the 'notify_observers' method is where the magic happens. It will notify all of the observer that an update has occurred. Each observer presumably shares an Observer interface of some kind. In our case, we're sticking with the most basic and traditional method within the Observer pattern tradition: 'update'. The 'observers' must all adhere to the same interface. Multiple observer of different class types can observe the same subject with ease.
-What you choose to do with the information that has been broadcast to an observer is up to you. By the Way, the subject is a publisher and an observer is a subscriber. "Publish/Subscribe" is an alias for "Subject/Observer", which is the Observer pattern through and through. We'll create two observers and our subject. Next, we'll attach the two observers to the subject. Finally, we'll notify the observers that some change has occurred.
-
-17. Proxy design pattern: provide a surrogate / placeholder for another object to control access to it.
-
-AccountProtectionProxy creates an account if the account name is  `bamroc`. It can deposit some money and withdraw some money.
-
-18. Prototype design pattern: Specify the kinds of objects to create using a prototypical instance, and create new objects by copying this prototype.
-
-PizzaPrototype is calling pizza_type to select the menu type. The _clone method recreates a clone of the pizza.
+17. Proxy design pattern: This provide a way for a protected account to be created unlike An ordinary aacount. 
+proxy = AccountProtectionProxy.new(account, 'bamroc')
+proxy.deposit(20)
+proxy.withdraw(40)
+puts proxy.balance
+This is the AccountProtection Proxy  class which is used to protect Account class.
 
 
-19. State design pattern: Allow an object to alter its behaviour when its internal state changes. The object will appear to change its class.
-
-ConcreteStateA class calls handleit requires
-
+19. State design pattern: These are the the requirements for changing the internal state of ConcerteStatA which runs 
+state = ConcreteStateA.new
 context = Context.new(state)
-
-then
-
+context.request
 context.request
 
-20. Strategy design pattern: Here, we create objects which represent various strategies and a context object whose behavior varies as per its strategy object. 
+20. Strategy design pattern: Here are the steps  to install  an engine on a car
+a. Declare the car
+b. Declare the engine type on the car
+this can be easily run off 
+car_a = Car.new(StraightSixEngine.new)
+car_b = Car.new(V8Engine.new)
+car_a.start
+car_a.stop
+car_b.start
 
-In the example attached, an instance of the Car class accepts an engine strategy. There are two engine strategies defined, StraightSixEngine and V8Engine. Each encapsulates a variant of an engine algorithm. Each shares a common interface. 
+21. Visitor design pattern: fo rthis we have an Order and product. These are the steps to print a receipt from the Order. 
+p1 = Product.new(name: 'Laptop', price: 1000)
+p2 = Product.new(name: 'Beer', price: 5)
+    order = Order.new
+    order.add_product(p1)
+    order.add_product(p2)
+    order.accept(ProductsPrinterVisitor.new)
+    order.accept(HalfPriceSimulatorVisitor.new)
 
-21. Visitor design pattern: represent an operation to be performed on the elements of an object structure. Visitor lets you define a new operation without changing the classes of the elements on which it operates.
 
-Order contains an array of product and exposes simple method to add new product to the list. Order contains an array of product and exposes simple method to accept a new product to the list. We can define operations in a separate classes and we can visit the order with that operation. Order will apply that operation to every product from the list. That way we don't have to expose internal representation of products and we don't have to extend Order or Product if we wan't to add new operation.
+22. Template Method design pattern: for this we have a car builder. These steps to required to build a car include
+a. declare the car builder: car = OmegaCarBuilder.new
+b. the steps required to start the engine of the car can be done by 
+    car.add_engine
+    car.start_engine
 
-
-22. Template Method design pattern: Define the skeleton of an algorithm in an operation, deferring some steps to subclasses.
-
-Template Method pattern to the #add_engine step. It is to be defined in derivatives (subclasses) of the CarBuilder class.
-
+23. Adaptor design pattern: For this, we had a GuitarBuilder class which helps reduce the complexity involved in building a guitar. The following are the steps required in building a guitar:
+a. Add a string 
+b. Craft the guitar body 
+c. Paint the guitar body
+The following processes can easily be accomplished via:
+     - guitar_builder = GuitarBuilder.new
+     - guitar_builder.add_strings(6)
+     - guitar_builder.craft_body
+     - guitar_builder.paint_body
