@@ -4,9 +4,13 @@
   
 
 1. ### Abstract_factory
+ ### Abstract_factory
  The following steps are required in building a Jungle
-		a. Number of animals
-		b. Jungle Organism Factory
+		
+
+    a. Number of animals
+    b. Jungle Organism Factory
+
   the above processes can easily be accomplished via
 `jungle = Habitat.new(JungleOrganismFactory.new, number_of_animals: 2)`
 
