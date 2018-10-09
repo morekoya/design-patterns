@@ -17,11 +17,11 @@ which gives the output:
     Tiger Animal1 eats meat
     Roar
 
-2. Singleton design pattern: This Configuration class shows the creation of the same configuration twice in line with the Singleton method. It does not get instantiated
+2. ### Singleton design pattern: 
+This Configuration class shows the creation of the same configuration twice in line with the Singleton method. It does not get instantiated
 
-  
 
-3. ### Factory method 
+4. ### Factory method 
  The following steps are required in building a shape
 
 a. The shape to be built
@@ -41,13 +41,13 @@ This can easily be accomplished by
 4. ### Bridge design pattern
 The following is required in getting a shape to be drawn on a system
 
-a. The name of shape
+    a. The name of shape
+    
+    b. The name of system
 
-b. The name of system
+this can easily be accomplished by `Rectangle.new(MacOs.new)`
 
-this can easily be accomplished by Rectangle.new(MacOs.new)
-
-So the rectangle.draw shows up 'drawing a rectangle upon a Mac'
+So the rectangle#draw shows up 'drawing a rectangle upon a Mac'
 
   
 
@@ -74,19 +74,19 @@ The following steps are required for showing that objects and compositions of ob
     
     b. add_sub_task(MakeBatterTask.new)
 
-One can see that they both have initialize methods to store the name of the task an get_time_required to store the time left for the task to be completed.
+One can see that they both have initialize methods to store the name of the task and get_time_required to store the time left for the task to be completed.
 
 8. #### Decorator method : 
 †he following steps are required for getting the price of different types of coffee
 
 a. the type of coffee
 
-this can easily be accomplished by running CoffeeWithSugar.new(Coffee.new) to get the price
+this can easily be accomplished by running `CoffeeWithSugar.new(Coffee.new)` to get the price
 
 9. ### Facade  
  This is the following steps required to run the SubSytemClass#{number} class
 
-a. call a new inststance of FacadeSystem class as in `facade = FacadeSystem.new`
+a. call a new instance of FacadeSystem class as in `facade = FacadeSystem.new`
  call facade. method_1 or facade. method_2
 
   
@@ -96,9 +96,7 @@ These are the steps required to run FlyweightFactory
 
 
     a. call the flyweightFActory Class as in flyweight_factory = FlyweightFactory.new
-    
     b. call flyweight_factory.get_flyweight("flyweight1") to see what get returned
-    
     c. flyweight1.operation(10) to see the return
 
   
@@ -139,9 +137,9 @@ to get the elements added
 14. ### Mediator
 These are the following steps required to find a word
 
-a. Submit a array of words
-
-b. Submit a Mediator with the value of the searched text_field
+    a. Submit a array of words
+    
+    b. Submit a Mediator with the value of the searched text_field
 
 This can easily be solved by running
 
@@ -228,7 +226,7 @@ This provide a way for a protected account to be created unlike An ordinary aaco
 This is the AccountProtection Proxy class which is used to protect Account class.
 
 19. ### State design pattern
-These are the the requirements for changing the internal state of ConcerteStatA which runs
+These are the the requirements for changing the internal state of ConcreteStateA which runs
 
 	    state = ConcreteStateA.new
         
